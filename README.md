@@ -2,3 +2,36 @@
 ### What is Time Series Forecasting?
 
 Time-series forecasting is a technique that utilizes historical and current data to predict future values over a period of time or a specific point in the future. By analyzing data that we stored in the past, we can make informed decisions that can guide our business strategy and help us understand future trends.
+
+### Getting the Data
+
+The first step is to get the data and load it to memory. We will get our stock data from the Yahoo Finance website. Yahoo Finance is a rich resource of financial market data and tools to find compelling investments. To get the data from Yahoo Finance, we will be using yfinance library which offers a threaded and Pythonic way to download market data from Yahoo.
+
+#### Closing Price
+
+The closing price is the last price at which the stock is traded during the regular trading day. A stock’s closing price is the standard benchmark used by investors to track its performance over time.
+
+### Stationary
+A stationary process has the property that the mean, variance and autocorrelation structure do not change over time. Stationarity can be defined in precise mathematical terms, but for our purpose we mean a flat looking series, without trend, constant variance over time, a constant autocorrelation structure over time and no periodic fluctuations. To check whether the time series is sationary we need to check decompostion and do ADF test, KPSS test.
+
+### Time Series Decomposition Techniques
+
+Time series data consists of observations taken at consecutive points in time. These data can often be decomposed into multiple components to better understand the underlying patterns and trends. Time series decomposition is the process of separating a time series into its constituent components, such as trend, seasonality, and noise. In this article, we will explore various time series decomposition techniques, their types, and provide code samples for each.
+
+Time series decomposition helps us break down a time series dataset into three main components:
+
+Trend: The trend component represents the long-term movement in the data, representing the underlying pattern.
+Seasonality: The component represents the repeating, short-term fluctuations caused by factors like seasons/cycle.
+Residual (Noise): The residual component represents random variability that remains after removing the trend and seasonality.
+
+#### Additive Model:
+
+Additive Model are the one where the variance of data doesn’t change over different values of the time series. The systematic component is the arithmetic sum of the individual effects of the predictors.
+
+Additive model is linear and the trend line here is a straight line and seasonality has same frequency and amplitude (height and width of the cycle respectively).
+
+#### Multiplicative Model:
+
+Multiplicative Model are the one where as the data increases, so does the seasonal pattern or the variance increases. Here the trend and seasonal components are multiplied and then added to the error component.
+
+Multiplicative model is non-linear, such as quadratic or exponential and the trend is a curved line and seasonality has an increasing or decreasing frequency and amplitude over time.
