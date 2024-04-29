@@ -51,5 +51,13 @@ A function is created to carry out the KPSS test on a time series.
 
 ### Differencing
 
-
 Differencing is a technique to transform a non-stationary time series into a stationary one. It involves subtracting the current value of the series from the previous one, or from a lagged value. Differencing can remove trends and seasonal patterns from the data, making it more stationary.
+
+### Interpreting ACF and PACF
+The autocorrelation analysis helps in detecting hidden patterns and seasonality and in checking for randomness. The autocorrelation analysis helps to identify the AR(p) and MA(q) parameters for the ARIMA model.
+
+#### PACF
+A partial autocorrelation is a summary of the relationship between an observation in a time series with observations at prior time steps with the relationships of intervening observations removed.
+
+#### ACF
+The correlation of the time series observations is calculated with values of the same series at previous times autocorrelation.
