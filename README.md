@@ -61,3 +61,50 @@ A partial autocorrelation is a summary of the relationship between an observatio
 
 #### ACF
 The correlation of the time series observations is calculated with values of the same series at previous times autocorrelation.
+
+### Autoregressive Integrated Moving Average (ARIMA)
+An autoregressive integrated moving average, or ARIMA, is a statistical analysis model that uses time series data to either better understand the data set or to predict future trends. 
+
+A statistical model is autoregressive if it predicts future values based on past values. For example, an ARIMA model might seek to predict a stock's future prices based on its past performance or forecast a company's earnings based on past periods.
+
+An ARIMA model can be understood by outlining each of its components as follows:
+
+1. Autoregression (AR): refers to a model that shows a changing variable that regresses on its own lagged, or prior, values.
+2. Integrated (I): represents the differencing of raw observations to allow the time series to become stationary (i.e., data values are replaced by the difference between the data values and the previous values).
+3. Moving average (MA):  incorporates the dependency between an observation and a residual error from a moving average model applied to lagged observations.
+
+ARIMA Parameters
+
+Each component in ARIMA functions as a parameter with a standard notation. For ARIMA models, a standard notation would be ARIMA with p, d, and q, where integer values substitute for the parameters to indicate the type of ARIMA model used. The parameters can be defined as:
+
+1. p: the number of lag observations in the model, also known as the lag order.
+2. d: the number of times the raw observations are differenced; also known as the degree of differencing.
+3. q: the size of the moving average window, also known as the order of the moving average.
+
+How Does ARIMA Forecasting Work?
+
+ARIMA forecasting is achieved by plugging in time series data for the variable of interest. Statistical software will identify the appropriate number of lags or amount of differencing to be applied to the data and check for stationarity. It will then output the results, which are often interpreted similarly to that of a multiple linear regression model.
+
+ ### Seasonal Autoregressive Integrated Moving Average (SARIMA)
+ 
+SARIMA, which stands for Seasonal Autoregressive Integrated Moving Average, is a versatile and widely used time series forecasting model. It’s an extension of the non-seasonal ARIMA model, designed to handle data with seasonal patterns. SARIMA captures both short-term and long-term dependencies within the data, making it a robust tool for forecasting. It combines the concepts of autoregressive (AR), integrated (I), and moving average (MA) models with seasonal components.
+
+#### The Components of SARIMA
+
+To grasp SARIMA, let’s break down its components:
+
+1. Seasonal Component: The “S” in SARIMA represents seasonality, which refers to repeating patterns in the data. This could be daily, monthly, yearly, or any other regular interval. Identifying and modelling the seasonal component is a key strength of SARIMA.
+2. Autoregressive (AR) Component: The “AR” in SARIMA signifies the autoregressive component, which models the relationship between the current data point and its past values. It captures the data’s autocorrelation, meaning how correlated the data is with itself over time.
+3. Integrated (I) Component: The “I” in SARIMA indicates differencing, which transforms non-stationary data into stationary data. Stationarity is crucial for time series modelling. The integrated component measures how many differences are required to achieve stationarity.
+4. Moving Average (MA) Component: The “MA” in SARIMA represents the moving average component, which models the dependency between the current data point and past prediction errors. It helps capture short-term noise in the data.
+
+#### Seasonal Differencing 
+
+Before we jump into SARIMA, it’s essential to understand seasonal differencing. Seasonal differencing is the process of subtracting the time series data by a lag that equals the seasonality. This helps remove the seasonal component and makes the data stationary, allowing for more straightforward modeling. Seasonal differencing is often denoted as “D” in SARIMA.
+
+### Evaluate the Model
+Let’s evaluate the forecasted sales values by comparing them to the observed sales data using two common metrics for this evaluation: Mean Absolute Error (MAE) and Mean Squared Error (MSE).
+
+1. MAE (Mean Absolute Error) measures the average absolute difference between the observed and forecasted values. It provides a simple and easily interpretable measure of the model’s accuracy.
+2. MSE (Mean Squared Error) measures the average of the squared differences between the observed and forecasted values. MSE gives more weight to large errors and is sensitive to outliers.
+3. Lower values indicate better performance.
